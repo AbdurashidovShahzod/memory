@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_puzzle.*
 import uz.pdp.mymemorygame.R
 
@@ -14,6 +15,13 @@ class PuzzleActivity : AppCompatActivity(), Animation.AnimationListener {
     var f3 = false
     var f4 = false
     var counter = 0
+    var a = 0
+    var b: Boolean? = null
+    var z = 0
+    var j = 0
+    var t = 0
+    var n = 0
+    var x: ImageView? = null
     var animation1: Animation? = null
     var animation2: Animation? = null
     var listPhoto = listOf(
@@ -30,7 +38,7 @@ class PuzzleActivity : AppCompatActivity(), Animation.AnimationListener {
         R.drawable.ic_i05,
         R.drawable.ic_i06
     )
-
+    private lateinit var array: List<ImageView>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +52,9 @@ class PuzzleActivity : AppCompatActivity(), Animation.AnimationListener {
             imageM1, imageM2, imageM3, imageM4, imageM5,
             imageM6, imageM7, imageM8, imageM9, imageM10, imageM10, imageM11, imageM12
         )
+
+
+
         imageM1.setOnClickListener {
             imageM1.startAnimation(animation1)
             f1 = true
@@ -55,14 +66,10 @@ class PuzzleActivity : AppCompatActivity(), Animation.AnimationListener {
             counter++
         }
         imageM3.setOnClickListener {
-            f3 = true
             imageM3.startAnimation(animation1)
-            counter++
         }
         imageM4.setOnClickListener {
-            f4 = true
             imageM4.startAnimation(animation1)
-            counter++
 
         }
         imageM5.setOnClickListener {
