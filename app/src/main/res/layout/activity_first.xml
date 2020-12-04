@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".FirstActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_memory_card__1_" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/sonsie_one"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="My memory game"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/playBtn"
+            android:layout_width="@dimen/btnSize1"
+            android:layout_height="@dimen/btnSizeH1"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_button"
+            android:fontFamily="@font/sonsie_one"
+            android:gravity="center"
+            android:text="play"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/aboutBtn"
+            android:layout_width="@dimen/btnSize1"
+            android:layout_height="@dimen/btnSizeH1"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_button"
+            android:backgroundTint="@color/purple_200"
+            android:fontFamily="@font/sonsie_one"
+            android:gravity="center"
+            android:text="about"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/exitBtn"
+            android:layout_width="@dimen/btnSize1"
+            android:layout_height="@dimen/btnSizeH1"
+            android:background="@drawable/shape_button"
+            android:fontFamily="@font/sonsie_one"
+            android:gravity="center"
+            android:text="exit"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
