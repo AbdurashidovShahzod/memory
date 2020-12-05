@@ -47,14 +47,27 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/playBtn"
+            android:id="@+id/playEasyBtn"
             android:layout_width="@dimen/btnSize1"
             android:layout_height="@dimen/btnSizeH1"
             android:layout_marginBottom="10dp"
             android:background="@drawable/shape_button"
             android:fontFamily="@font/sonsie_one"
             android:gravity="center"
-            android:text="play"
+            android:text="easy"
+            android:backgroundTint="@color/purple_200"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/playHardBtn"
+            android:layout_width="@dimen/btnSize1"
+            android:layout_height="@dimen/btnSizeH1"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_button"
+            android:fontFamily="@font/sonsie_one"
+            android:gravity="center"
+            android:text="Hard"
             android:textSize="22sp"
             android:textStyle="bold" />
 
