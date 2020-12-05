@@ -229,7 +229,6 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
                         )
                         var intent = Intent(this@MyMemoryActivity, SecondMemoryActivity::class.java)
                         startActivity(intent)
-//                        text2.visibility = View.INVISIBLE
                     } else if (three == 12 && four > 0) {
                         firstText.startAnimation(animation3)
                         Toast.makeText(
@@ -240,7 +239,7 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
                         var intent = Intent(this@MyMemoryActivity, SecondMemoryActivity::class.java)
                         startActivity(intent)
                         countDown.visibility = View.INVISIBLE
-//                        image3.visibility = View.INVISIBLE
+
 
                     }
                 } else if (countDown.text == "0" && three != 12) {
