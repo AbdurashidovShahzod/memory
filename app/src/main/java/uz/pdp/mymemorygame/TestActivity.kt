@@ -24,8 +24,8 @@ class TestActivity : AppCompatActivity(), Animation.AnimationListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
 
-        var animation1 = AnimationUtils.loadAnimation(this, R.anim.anim1)
-        var animation2 = AnimationUtils.loadAnimation(this, R.anim.anim2)
+        var animation1 = AnimationUtils.loadAnimation(this, R.anim.animation1)
+        var animation2 = AnimationUtils.loadAnimation(this, R.anim.animation2)
 
         animation1.setAnimationListener(this)
         animation2.setAnimationListener(this)
@@ -99,7 +99,7 @@ class TestActivity : AppCompatActivity(), Animation.AnimationListener {
     }
 
     override fun onAnimationEnd(p0: Animation?) {
-        var animation2 = AnimationUtils.loadAnimation(this, R.anim.anim2)
+        var animation2 = AnimationUtils.loadAnimation(this, R.anim.animation2)
 
 
     }

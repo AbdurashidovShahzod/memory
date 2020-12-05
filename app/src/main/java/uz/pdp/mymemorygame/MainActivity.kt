@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity(), Animation.AnimationListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var animation1 = AnimationUtils.loadAnimation(this, R.anim.anim1)
-        var animation2 = AnimationUtils.loadAnimation(this, R.anim.anim2)
+        var animation1 = AnimationUtils.loadAnimation(this, R.anim.animation1)
+        var animation2 = AnimationUtils.loadAnimation(this, R.anim.animation2)
         animation1.setAnimationListener(this)
 
         imageM1.setOnClickListener {
@@ -79,13 +79,13 @@ class MainActivity : AppCompatActivity(), Animation.AnimationListener {
     override fun onAnimationEnd(p0: Animation?) {
         if (i1) {
             imageM1.setImageResource(R.drawable.ic_i1)
-            var animation2 = AnimationUtils.loadAnimation(this, R.anim.anim2)
+            var animation2 = AnimationUtils.loadAnimation(this, R.anim.animation2)
             imageM1.startAnimation(animation2)
             i1 = false
             counter++
         } else {
             imageM2.setImageResource(R.drawable.ic_i1)
-            var animation2 = AnimationUtils.loadAnimation(this, R.anim.anim2)
+            var animation2 = AnimationUtils.loadAnimation(this, R.anim.animation2)
             imageM2.startAnimation(animation2)
             i2 = false
             counter++
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity(), Animation.AnimationListener {
                         card2.visibility = View.INVISIBLE
                     } else {
                         var animation1 =
-                            AnimationUtils.loadAnimation(this@MainActivity, R.anim.anim1)
+                            AnimationUtils.loadAnimation(this@MainActivity, R.anim.animation1)
                         imageM1.startAnimation(animation1)
                         imageM2.startAnimation(animation1)
                     }

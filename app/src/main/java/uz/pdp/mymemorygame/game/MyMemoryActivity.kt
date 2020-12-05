@@ -33,9 +33,9 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_memory)
 
-        animation1 = AnimationUtils.loadAnimation(this, R.anim.anim1)
-        animation2 = AnimationUtils.loadAnimation(this, R.anim.anim2)
-        animation3 = AnimationUtils.loadAnimation(this, R.anim.anim3)
+        animation1 = AnimationUtils.loadAnimation(this, R.anim.animation1)
+        animation2 = AnimationUtils.loadAnimation(this, R.anim.animation2)
+        animation3 = AnimationUtils.loadAnimation(this, R.anim.animation3)
         animation1?.setAnimationListener(this)
 
         arrayImage = listOf(
