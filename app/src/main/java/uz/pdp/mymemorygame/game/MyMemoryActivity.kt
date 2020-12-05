@@ -16,45 +16,36 @@ import kotlinx.android.synthetic.main.activity_my_memory.*
 import kotlinx.android.synthetic.main.activity_puzzle.*
 
 class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
-    var anim1: Animation? = null
-    var anim2: Animation? = null
-    var anim3: Animation? = null
+    var animation1: Animation? = null
+    var animation2: Animation? = null
+    var animation3: Animation? = null
     var index1 = 0
-    var index2: CountDownTimer? = null
-    var a = 0
-    var b: Boolean? = null
-    var z = 0
-    var j = 0
-    var t = 0
-    var n = 0
-    var count = 0
-    var x: ImageButton? = null
-    private lateinit var g: List<ImageButton>
-
-    private var image = listOf(
-        R.drawable.ic_i1, R.drawable.ic_i2, R.drawable.ic_i3,
-        R.drawable.ic_i4, R.drawable.ic_i5, R.drawable.ic_i6
-    )
-
-    private lateinit var array: List<ImageButton>
+    private var resultImage = 0
+    var first = 0
+    var second = 0
+    var three = 0
+    var four = 0
+    var counter = 0
+    private lateinit var list: List<ImageButton>
+    private lateinit var arrayImage: List<ImageButton>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_memory)
 
-        anim1 = AnimationUtils.loadAnimation(this, R.anim.anim1)
-        anim2 = AnimationUtils.loadAnimation(this, R.anim.anim2)
-        anim3 = AnimationUtils.loadAnimation(this, R.anim.anim3)
-        anim1?.setAnimationListener(this)
+        animation1 = AnimationUtils.loadAnimation(this, R.anim.anim1)
+        animation2 = AnimationUtils.loadAnimation(this, R.anim.anim2)
+        animation3 = AnimationUtils.loadAnimation(this, R.anim.anim3)
+        animation1?.setAnimationListener(this)
 
-        array = listOf(
+        arrayImage = listOf(
             imageButton1, imageButton2, imageButton3, imageButton4,
             imageButton5, imageButton6, imageButton7, imageButton8,
             imageButton9, imageButton10, imageButton11, imageButton12
         )
 
 
-        object : CountDownTimer(100000, 1000) {
+        object : CountDownTimer(70000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 countDown.text = "" + millisUntilFinished / 1000
             }
@@ -65,69 +56,69 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
 
         }.start()
 
-        array.forEachIndexed { index, imageButton ->
+        arrayImage.forEachIndexed { index, imageButton ->
             imageButton.setOnClickListener {
-                imageButton.startAnimation(anim1)
+                imageButton.startAnimation(animation1)
                 when (index) {
                     0 -> {
-                        count++
+                        counter++
                         index1 = index
-                        a++
+                        resultImage++
                     }
                     1 -> {
                         index1 = index
-                        a++
-                        count++
+                        resultImage++
+                        counter++
                     }
                     2 -> {
                         index1 = index
-                        count++
-                        a++
+                        counter++
+                        resultImage++
                     }
                     3 -> {
                         index1 = index
-                        count++
-                        a++
+                        counter++
+                        resultImage++
                     }
                     4 -> {
                         index1 = index
-                        count++
-                        a++
+                        counter++
+                        resultImage++
                     }
                     5 -> {
-                        a++
-                        count++
+                        resultImage++
+                        counter++
                         index1 = index
                     }
                     6 -> {
                         index1 = index
-                        count++
-                        a++
+                        counter++
+                        resultImage++
                     }
                     7 -> {
                         index1 = index
-                        count++
-                        a++
+                        counter++
+                        resultImage++
                     }
                     8 -> {
                         index1 = index
-                        count++
-                        a++
+                        counter++
+                        resultImage++
                     }
                     9 -> {
                         index1 = index
-                        count++
-                        a++
+                        counter++
+                        resultImage++
                     }
                     10 -> {
                         index1 = index
-                        count++
-                        a++
+                        counter++
+                        resultImage++
                     }
                     11 -> {
                         index1 = index
-                        count++
-                        a++
+                        counter++
+                        resultImage++
                     }
 
                 }
@@ -144,106 +135,106 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
         when (index1) {
             0 -> {
                 imageButton1.setImageResource(R.drawable.ic_i1)
-                imageButton1.startAnimation(anim2)
+                imageButton1.startAnimation(animation2)
             }
             1 -> {
                 imageButton2.setImageResource(R.drawable.ic_i2)
-                imageButton2.startAnimation(anim2)
+                imageButton2.startAnimation(animation2)
             }
             2 -> {
                 imageButton3.setImageResource(R.drawable.ic_i3)
-                imageButton3.startAnimation(anim2)
+                imageButton3.startAnimation(animation2)
             }
             3 -> {
                 imageButton4.setImageResource(R.drawable.ic_i4)
-                imageButton4.startAnimation(anim2)
+                imageButton4.startAnimation(animation2)
             }
             4 -> {
                 imageButton5.setImageResource(R.drawable.ic_i5)
-                imageButton5.startAnimation(anim2)
+                imageButton5.startAnimation(animation2)
             }
             5 -> {
                 imageButton6.setImageResource(R.drawable.ic_i1)
-                imageButton6.startAnimation(anim2)
+                imageButton6.startAnimation(animation2)
             }
             6 -> {
                 imageButton7.setImageResource(R.drawable.ic_i3)
-                imageButton7.startAnimation(anim2)
+                imageButton7.startAnimation(animation2)
             }
             7 -> {
                 imageButton8.setImageResource(R.drawable.ic_i2)
-                imageButton8.startAnimation(anim2)
+                imageButton8.startAnimation(animation2)
             }
             8 -> {
                 imageButton9.setImageResource(R.drawable.ic_i5)
-                imageButton9.startAnimation(anim2)
+                imageButton9.startAnimation(animation2)
             }
             9 -> {
                 imageButton10.setImageResource(R.drawable.ic_i4)
-                imageButton10.startAnimation(anim2)
+                imageButton10.startAnimation(animation2)
             }
             10 -> {
                 imageButton11.setImageResource(R.drawable.ic_i6)
-                imageButton11.startAnimation(anim2)
+                imageButton11.startAnimation(animation2)
             }
             11 -> {
                 imageButton12.setImageResource(R.drawable.ic_i6)
-                imageButton12.startAnimation(anim2)
+                imageButton12.startAnimation(animation2)
             }
 
         }
 
-        anim2?.setAnimationListener(object : Animation.AnimationListener {
+        animation2?.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
 
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-                if (count == 1) {
-                    z = index1
-                    g = listOf(array[z])
+                if (counter == 1) {
+                    first = index1
+                    list = listOf(arrayImage[first])
                 }
-                if (count == 2) {
-                    j = index1
-                    if (array[z].drawable.constantState == array[j].drawable.constantState &&
-                        array[z].id != array[index1].id
+                if (counter == 2) {
+                    second = index1
+                    if (arrayImage[first].drawable.constantState == arrayImage[second].drawable.constantState &&
+                        arrayImage[first].id != arrayImage[index1].id
                     ) {
-                        array[z].startAnimation(anim3)
-                        array[z].visibility = View.INVISIBLE
-                        array[j].startAnimation(anim3)
-                        array[j].visibility = View.INVISIBLE
-                        t++
-                    } else if (array[z].id != array[index1].id) {
+                        arrayImage[first].startAnimation(animation3)
+                        arrayImage[first].visibility = View.INVISIBLE
+                        arrayImage[second].startAnimation(animation3)
+                        arrayImage[second].visibility = View.INVISIBLE
+                        three++
+                    } else if (arrayImage[first].id != arrayImage[index1].id) {
                         Thread.sleep(400)
-                        array[z].setImageResource(R.drawable.ic_light_bulb)
-                        array[z].startAnimation(anim2)
-                        array[j].setImageResource(R.drawable.ic_light_bulb)
-                        array[j].startAnimation(anim2)
-                        n++
-                    } else if (array[z].id == array[index1].id) {
-                        array[j].setImageResource(R.drawable.ic_light_bulb)
-                        array[j].startAnimation(anim2)
+                        arrayImage[first].setImageResource(R.drawable.ic_light_bulb)
+                        arrayImage[first].startAnimation(animation2)
+                        arrayImage[second].setImageResource(R.drawable.ic_light_bulb)
+                        arrayImage[second].startAnimation(animation2)
+                        four++
+                    } else if (arrayImage[first].id == arrayImage[index1].id) {
+                        arrayImage[second].setImageResource(R.drawable.ic_light_bulb)
+                        arrayImage[second].startAnimation(animation2)
                     }
-                    count = 0
+                    counter = 0
                 }
 
 
                 if (countDown.text != "0") {
-                    if (t == 12 && n == 0) {
-                        firstText.startAnimation(anim3)
+                    if (three == 12 && four == 0) {
+                        firstText.startAnimation(animation3)
                         Toast.makeText(
                             applicationContext,
-                            "Juda zur siz hammasini bir urunishda topdingiz!",
+                            "Urrra g'alaba!!!",
                             Toast.LENGTH_LONG
                         )
                         var intent = Intent(this@MyMemoryActivity, SecondMemoryActivity::class.java)
                         startActivity(intent)
 //                        text2.visibility = View.INVISIBLE
-                    } else if (t == 12 && n > 0) {
-                        firstText.startAnimation(anim3)
+                    } else if (three == 12 && four > 0) {
+                        firstText.startAnimation(animation3)
                         Toast.makeText(
                             applicationContext,
-                            "Siz $n ta xato qildingiz!",
+                            "Afsuski xatolar bor!!!",
                             Toast.LENGTH_LONG
                         )
                         var intent = Intent(this@MyMemoryActivity, SecondMemoryActivity::class.java)
@@ -252,11 +243,11 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
 //                        image3.visibility = View.INVISIBLE
 
                     }
-                } else if (countDown.text == "0" && t != 12) {
-                    textName.startAnimation(anim3)
+                } else if (countDown.text == "0" && three != 12) {
+                    textName.startAnimation(animation3)
                     Toast.makeText(
                         applicationContext,
-                        "Istirok uchun kattaraxmat Afsuski siz yutqazdingiz!",
+                        "Exxxx mag'lubiyat",
                         Toast.LENGTH_LONG
                     )
                     var intent = Intent(this@MyMemoryActivity, ThreeMemoryActivity::class.java)
