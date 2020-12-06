@@ -17,16 +17,16 @@ import kotlinx.android.synthetic.main.activity_puzzle.*
 import uz.pdp.mymemorygame.R
 
 class MyMemoryHardActivity : AppCompatActivity(), Animation.AnimationListener {
-    var animation1: Animation? = null
-    var animation2: Animation? = null
-    var animation3: Animation? = null
-    var indexImage = 0
-    var resultImage = 0
-    var first = 0
-    var second = 0
-    var three = 0
-    var four = 0
-    var countable = 0
+    private var animation1: Animation? = null
+    private var animation2: Animation? = null
+    private var animation3: Animation? = null
+    private var indexImage = 0
+    private var resultImage = 0
+    private var first = 0
+    private var second = 0
+    private var three = 0
+    private var four = 0
+    private var countable = 0
     private lateinit var list: List<ImageButton>
     private lateinit var arrayImage: List<ImageButton>
 
@@ -192,7 +192,7 @@ class MyMemoryHardActivity : AppCompatActivity(), Animation.AnimationListener {
     }
 
     override fun onAnimationEnd(animation: Animation?) {
-        when (indexImage) {
+        when (indexImage)  {
             0 -> {
                 img1.setImageResource(R.drawable.ic_i1)
                 img1.startAnimation(animation2)

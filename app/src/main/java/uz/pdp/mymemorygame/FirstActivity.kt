@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_first.*
 import uz.pdp.mymemorygame.game.MyMemoryActivity
-import uz.pdp.mymemorygame.game.MyMemoryHardActivity
-import uz.pdp.mymemorygame.game.PuzzleActivity
+
 
 class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +15,7 @@ class FirstActivity : AppCompatActivity() {
             startActivity(Intent(this, MyMemoryActivity::class.java))
         }
         playHardBtn.setOnClickListener {
-            startActivity(Intent(this, MyMemoryHardActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
         aboutBtn.setOnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))

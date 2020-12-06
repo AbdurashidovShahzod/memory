@@ -9,17 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMemoryGame">
-        <activity android:name=".game.MyMemoryHardActivity"></activity>
+        <activity android:name=".game.Main2Activity"></activity>
+        <activity android:name=".game.MyMemoryHardActivity" />
         <activity android:name=".game.ThreeMemoryActivity" />
         <activity android:name=".game.SecondMemoryActivity" />
-        <activity android:name=".game.MyMemoryActivity">
-
-        </activity>
+        <activity android:name=".game.MyMemoryActivity"></activity>
         <activity android:name=".game.PuzzleActivity" />
         <activity android:name=".TestActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".FirstActivity" />
-        <activity android:name=".SplashActivity" >
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,8 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".GameActivity">
-        </activity>
+        <activity android:name=".GameActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

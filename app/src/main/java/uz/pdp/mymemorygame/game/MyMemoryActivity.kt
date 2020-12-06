@@ -14,18 +14,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.activity_my_memory.*
 import kotlinx.android.synthetic.main.activity_puzzle.*
+import uz.pdp.mymemorygame.MainActivity
 
 class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
-    var animation1: Animation? = null
-    var animation2: Animation? = null
-    var animation3: Animation? = null
-    var indexImage = 0
+    private var animation1: Animation? = null
+    private var animation2: Animation? = null
+    private var animation3: Animation? = null
+    private var indexImage = 0
     private var resultImage = 0
-    var first = 0
-    var second = 0
-    var three = 0
-    var four = 0
-    var counter = 0
+    private var first = 0
+    private var second = 0
+    private var three = 0
+    private var four = 0
+    private var counter = 0
     private lateinit var list: List<ImageButton>
     private lateinit var arrayImage: List<ImageButton>
 
@@ -45,13 +46,15 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
         )
 
 
-        object : CountDownTimer(70000, 1000) {
+        object : CountDownTimer(20000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 countDown.text = "" + millisUntilFinished / 1000
             }
 
             override fun onFinish() {
                 countDown.text = "0"
+                startActivity(Intent(this@MyMemoryActivity, MainActivity::class.java))
+                finish()
             }
 
         }.start()
@@ -206,7 +209,7 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
                         three++
 
                     } else if (arrayImage[first].id != arrayImage[indexImage].id) {
-                        Thread.sleep(400)
+                        Thread.sleep(200)
                         arrayImage[first].setImageResource(R.drawable.ic_light_bulb)
                         arrayImage[first].startAnimation(animation2)
                         arrayImage[second].setImageResource(R.drawable.ic_light_bulb)
@@ -223,38 +226,43 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
 
                 if (countDown.text != "0") {
                     if (three == 12 && four == 0) {
+                        startActivity(Intent(this@MyMemoryActivity, MainActivity::class.java))
                         firstText.startAnimation(animation3)
                         Toast.makeText(
                             applicationContext,
                             "Urrra g'alaba!!!",
                             Toast.LENGTH_LONG
                         )
-                        var intent = Intent(this@MyMemoryActivity, SecondMemoryActivity::class.java)
-                        startActivity(intent)
+//                        var intent = Intent(this@MyMemoryActivity, SecondMemoryActivity::class.java)
+//                        startActivity(intent)
                         countDown.visibility = View.INVISIBLE
+
                     } else if (three == 12 && four > 0) {
+                        startActivity(Intent(this@MyMemoryActivity, MainActivity::class.java))
                         firstText.startAnimation(animation3)
                         Toast.makeText(
                             applicationContext,
                             "Afsuski xatolar bor!!!",
                             Toast.LENGTH_LONG
                         )
-                        var intent = Intent(this@MyMemoryActivity, SecondMemoryActivity::class.java)
-                        startActivity(intent)
+//                        var intent = Intent(this@MyMemoryActivity, SecondMemoryActivity::class.java)
+//                        startActivity(intent)
                         countDown.visibility = View.INVISIBLE
-
 
                     }
                 } else if (countDown.text == "0" && three != 12) {
+                    startActivity(Intent(this@MyMemoryActivity, MainActivity::class.java))
                     textName.startAnimation(animation3)
                     Toast.makeText(
                         applicationContext,
                         "Exxxx mag'lubiyat",
                         Toast.LENGTH_LONG
                     )
-                    var intent = Intent(this@MyMemoryActivity, ThreeMemoryActivity::class.java)
-                    startActivity(intent)
+//                    var intent = Intent(this@MyMemoryActivity, ThreeMemoryActivity::class.java)
+//                    startActivity(intent)
+
                 }
+
             }
 
             override fun onAnimationRepeat(animation: Animation?) {
