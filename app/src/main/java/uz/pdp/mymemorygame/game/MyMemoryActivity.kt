@@ -19,7 +19,7 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
     var animation1: Animation? = null
     var animation2: Animation? = null
     var animation3: Animation? = null
-    var index1 = 0
+    var indexImage = 0
     private var resultImage = 0
     var first = 0
     var second = 0
@@ -62,61 +62,61 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
                 when (index) {
                     0 -> {
                         counter++
-                        index1 = index
+                        indexImage = index
                         resultImage++
                     }
                     1 -> {
-                        index1 = index
+                        indexImage = index
                         resultImage++
                         counter++
                     }
                     2 -> {
-                        index1 = index
+                        indexImage = index
                         counter++
                         resultImage++
                     }
                     3 -> {
-                        index1 = index
+                        indexImage = index
                         counter++
                         resultImage++
                     }
                     4 -> {
-                        index1 = index
+                        indexImage = index
                         counter++
                         resultImage++
                     }
                     5 -> {
                         resultImage++
                         counter++
-                        index1 = index
+                        indexImage = index
                     }
                     6 -> {
-                        index1 = index
+                        indexImage = index
                         counter++
                         resultImage++
                     }
                     7 -> {
-                        index1 = index
+                        indexImage = index
                         counter++
                         resultImage++
                     }
                     8 -> {
-                        index1 = index
+                        indexImage = index
                         counter++
                         resultImage++
                     }
                     9 -> {
-                        index1 = index
+                        indexImage = index
                         counter++
                         resultImage++
                     }
                     10 -> {
-                        index1 = index
+                        indexImage = index
                         counter++
                         resultImage++
                     }
                     11 -> {
-                        index1 = index
+                        indexImage = index
                         counter++
                         resultImage++
                     }
@@ -132,7 +132,7 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
     }
 
     override fun onAnimationEnd(animation: Animation?) {
-        when (index1) {
+        when (indexImage) {
             0 -> {
                 imageButton1.setImageResource(R.drawable.ic_i1)
                 imageButton1.startAnimation(animation2)
@@ -191,27 +191,29 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
 
             override fun onAnimationEnd(animation: Animation?) {
                 if (counter == 1) {
-                    first = index1
+                    first = indexImage
                     list = listOf(arrayImage[first])
                 }
                 if (counter == 2) {
-                    second = index1
+                    second = indexImage
                     if (arrayImage[first].drawable.constantState == arrayImage[second].drawable.constantState &&
-                        arrayImage[first].id != arrayImage[index1].id
+                        arrayImage[first].id != arrayImage[indexImage].id
                     ) {
                         arrayImage[first].startAnimation(animation3)
                         arrayImage[first].visibility = View.INVISIBLE
                         arrayImage[second].startAnimation(animation3)
                         arrayImage[second].visibility = View.INVISIBLE
                         three++
-                    } else if (arrayImage[first].id != arrayImage[index1].id) {
+
+                    } else if (arrayImage[first].id != arrayImage[indexImage].id) {
                         Thread.sleep(400)
                         arrayImage[first].setImageResource(R.drawable.ic_light_bulb)
                         arrayImage[first].startAnimation(animation2)
                         arrayImage[second].setImageResource(R.drawable.ic_light_bulb)
                         arrayImage[second].startAnimation(animation2)
                         four++
-                    } else if (arrayImage[first].id == arrayImage[index1].id) {
+
+                    } else if (arrayImage[first].id == arrayImage[indexImage].id) {
                         arrayImage[second].setImageResource(R.drawable.ic_light_bulb)
                         arrayImage[second].startAnimation(animation2)
                     }
@@ -229,6 +231,7 @@ class MyMemoryActivity : AppCompatActivity(), Animation.AnimationListener {
                         )
                         var intent = Intent(this@MyMemoryActivity, SecondMemoryActivity::class.java)
                         startActivity(intent)
+                        countDown.visibility = View.INVISIBLE
                     } else if (three == 12 && four > 0) {
                         firstText.startAnimation(animation3)
                         Toast.makeText(
